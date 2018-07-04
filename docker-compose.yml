@@ -1,0 +1,21 @@
+version: '3'
+services:
+ web:
+   image: notice_bot:v0
+   container_name: notice_bot
+   build: .
+
+   ports:
+    - "1999:1999"
+    - "8189:8189"
+    - "2999:2999"
+    - "8289:8289"
+
+   environment:
+    - QQ_NUM_SENDER=2590870063
+    - QQ_AUTH_PORT=8189
+    - QQ_RCV_NICK=jack
+    - WX_QR_PORT=8289
+    - WX_NICKNAME=anquantest
+
+   restart: always
